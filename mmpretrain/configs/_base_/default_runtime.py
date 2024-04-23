@@ -7,19 +7,19 @@ from mmengine.visualization import LocalVisBackend
 from mmpretrain.engine.hooks import VisualizationHook
 from mmpretrain.visualization import UniversalVisualizer
 
-# configure default hooks
+# configure default hooks 
 default_hooks = dict(
     # record the time of every iteration.
     timer=dict(type=IterTimerHook),
 
-    # print log every 100 iterations.
+    # print log every 100 iterations. 
     logger=dict(type=LoggerHook, interval=100),
 
     # enable the parameter scheduler.
     param_scheduler=dict(type=ParamSchedulerHook),
 
     # save checkpoint per epoch.
-    checkpoint=dict(type=CheckpointHook, interval=1),
+    checkpoint=dict(type=CheckpointHook, interval=100),
 
     # set sampler seed in distributed evrionment.
     sampler_seed=dict(type=DistSamplerSeedHook),
