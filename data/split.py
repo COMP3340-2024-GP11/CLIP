@@ -2,7 +2,7 @@ import numpy as np
 import os, pdb
 
 
-all_images = os.listdir("./flowers")
+all_images = os.listdir(".")
 all_images = [i for i in all_images if "jpg" in i]
 all_images = sorted(all_images)
 # pdb.set_trace()
