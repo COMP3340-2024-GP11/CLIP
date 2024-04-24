@@ -3,12 +3,19 @@ import cv2
 import numpy as np
 
 trimaps_folder = 'trimaps'
+jpg_folder = 'flower'
+
 trimaps_files = os.listdir(trimaps_folder)
 trimaps_files.sort()
-trimaps_files.remove('.DS_Store')
-jpg_folder = 'flower'
+
+if '.DS_Store' in trimaps_files:
+    trimaps_files.remove('.DS_Store')
+
 jpg_files = os.listdir(jpg_folder)
 jpg_files.sort()
+
+if '.DS_Store' in jpg_files:
+    jpg_files.remove('.DS_Store')
 
 output_folder = 'flowers'
 if not os.path.exists(output_folder):
