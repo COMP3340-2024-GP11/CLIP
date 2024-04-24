@@ -9,7 +9,6 @@ trimaps_files.remove('.DS_Store')
 jpg_folder = 'flower'
 jpg_files = os.listdir(jpg_folder)
 jpg_files.sort()
-jpg_files.remove('.DS_Store')
 
 output_folder = 'flowers'
 if not os.path.exists(output_folder):
@@ -23,7 +22,7 @@ for jpg_file in jpg_files:
     mask_file = os.path.splitext(jpg_file)[0] + '.png'
     mask_path = os.path.join(trimaps_folder, mask_file)
     
-    perturbation_scale = 1
+    perturbation_scale = 0.9
 
     # Load the original image
     original_image = cv2.imread(jpg_path)
@@ -59,4 +58,5 @@ for jpg_file in jpg_files:
 
     # Save the masked image
     output_path = os.path.join(output_folder, jpg_file)
-    cv2.imwrite(output_path, masked_image)
+    if masked_image is not None:
+        cv2.imwrite(output_path, masked_image)
