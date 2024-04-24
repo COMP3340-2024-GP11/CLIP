@@ -1,6 +1,6 @@
 import os,pdb
 
-f = open('flowers/meta/train.txt', 'w')
+f = open('meta/train.txt', 'w')
 
 classes = os.listdir('train')
 classes = sorted(classes)
@@ -14,7 +14,7 @@ for c in classes:
         f.write(line)
 f.close()
 
-f = open('flowers/meta/val.txt', 'w')
+f = open('meta/val.txt', 'w')
 
 classes = os.listdir('val')
 classes = sorted(classes)
@@ -28,7 +28,7 @@ for c in classes:
         f.write(line)
 f.close()
 
-f = open('flowers/meta/test.txt', 'w')
+f = open('meta/test.txt', 'w')
 
 classes = os.listdir('test')
 classes = sorted(classes)
