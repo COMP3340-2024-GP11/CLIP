@@ -98,7 +98,7 @@ pip install -U openmim && mim install -e .
 pip install -q --extra-index-url https://download.pytorch.org/whl/cpu gradio "openvino>=2023.1.0" "transformers[torch]>=4.30" "datasets" "nncf>=2.6.0"
 ```
 
-#It does not matter if an error occur like "ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts..."
+#It does not matter if an error occurs like "ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts..."
 
 ## Download data and manipulate data<a id="downloads"/>
 
@@ -139,13 +139,13 @@ class 1: 0.9875
 ...
 ```
 
-Alternatively, you can open any IDE that supports python notebook and open the file **clip.ipynb** to see the visualization demo of a CLIP inference with or without prompts. If you would like to view the inference result of different images, just change the file name in correct file name format as specified in the file.
+Alternatively, you can open any IDE that supports Python notebook and open the file **clip.ipynb** to see the visualization demo of a CLIP inference with or without prompts. If you would like to view the inference result of different images, just change the file name in the correct file name format as specified in the file.
 
-**Note: the result might have slight change in different running**
+**Note: the result might have slight changes in different running**
 
 ### Part B: Data augmentation using segmentation image
 
-First, download the groundtruth segmentation image to data folder
+First, download the groundtruth segmentation image to the data folder
 
 ```
 ##download segmentation image data and please make sure you are in the main directory
@@ -154,7 +154,7 @@ wget https://www.robots.ox.ac.uk/~vgg/data/flowers/17/trimaps.tgz
 tar zxvf trimaps.tgz
 ```
 
-Then, you can use **generate_segment.py** to augment data with segmentation mask and add perturbatioons in the background. You can operate as following:
+Then, you can use **generate_segment.py** to augment data with segmentation masks and add perturbations in the background. You can operate as follows:
 
 ```
 python generate_segment.py
@@ -181,7 +181,7 @@ configs/resnet/resnet18_flowers_bs128.py \
 --work-dir output/resnet18_flowers_bs128
 ```
 
-After training, you use the following command to test the model
+After training, you use the following command to test the model (as I have modified configs/__base__/datasets/flowers.py, the testing will still be done on the original data)
 
 ```
 python tools/test.py configs/tinyvit/resnet/resnet18_flowers_bs128.py output/resnet18_flowers_bs128/epoch_200.pth --out output/resnet18_flowers_bs128/test.pkl
